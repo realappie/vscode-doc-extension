@@ -1,0 +1,57 @@
+{
+	"name": "cloc-extension",
+	"displayName": "cloc-extension",
+	"description": "vscode extension to calculate comment density",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.25.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:typescript"
+    ],
+    "author": {
+        "email": "abdelelmedny@gmail.com",
+        "name": "Abdel El-medny"
+    },
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.calculate.comment.density",
+				"title": "Calculate comment density"
+			}
+        ],
+        "configuration": {
+            "properties": {
+                "threshold": {
+                    "type": "number",
+                    "default": 20,
+                    "description": "When to show a warning in the statusbar about the comment threshold",
+                    "title": "Comment threshold"
+                }
+            }
+        }
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"@types/node": "^8.10.25",
+		"tslint": "^5.11.0",
+		"typescript": "^3.2.2",
+		"vscode": "^1.1.22"
+	},
+	"dependencies": {
+		"cloc": "^2.4.0",
+		"cloc-lib": "^1.0.2",
+		"exec": "^0.2.1",
+		"node-loc": "^1.1.7"
+	}
+}
