@@ -5,8 +5,8 @@
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.25.0"
-    },
-    "license": "MIT",
+	},
+	"license": "MIT",
 	"categories": [
 		"Other"
 	],
@@ -50,9 +50,6 @@
 		"vscode": "^1.1.22"
 	},
 	"dependencies": {
-		"cloc": "^2.4.0",
-		"cloc-lib": "^1.0.2",
-		"exec": "^0.2.1",
-		"node-loc": "^1.1.7"
+		"cloc-lib": "^1.0.2"
 	}
 }
