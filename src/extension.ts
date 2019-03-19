@@ -20,15 +20,16 @@ let disposable: vscode.Disposable;
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-    const threshold: number = vscode.workspace.getConfiguration().get('threshold');
 
-    const commentDensityStatusBar = new CommentDensityStatusBar(threshold);
+    const commentDensityStatusBar = new CommentDensityStatusBar();
 
     disposable = vscode.commands.registerCommand('extension.calculate.comment.density', async () => {
 
         const percentage = await commentDensityStatusBar.update();
 
-        const message = commentDensityStatusBar.getFeedback(percentage);
+        const threshold: number = vscode.workspace.getConfiguration().get('threshold');
+
+        const message = commentDensityStatusBar.getFeedback(percentage, threshold);
 
         vscode.window.showInformationMessage(message);
     });
@@ -52,7 +53,7 @@ export function deactivate() {
 class CommentDensityStatusBar {
     private statusBarItem: vscode.StatusBarItem;
 
-    constructor(private threshold: number) {
+    constructor() {
         this.statusBarItem = vscode.window.createStatusBarItem(
             vscode.StatusBarAlignment.Left,
             100,
@@ -86,11 +87,11 @@ class CommentDensityStatusBar {
         return densityOfComment * 100;
     }
 
-    public getFeedback(commentDensity: number): string {
-        if ( commentDensity < this.threshold ) {
-            return `Your comment density is under the threshold of ${this.threshold}% 😭 It's ${commentDensity}`;
+    public getFeedback(commentDensity: number, threshold: number): string {
+        if ( commentDensity < threshold ) {
+            return `Your comment density is under the threshold of ${threshold}% 😭 It's ${commentDensity.toFixed(1)}`;
         } else {
-            return `Your comment density is above the threshold of ${this.threshold}% 🎉 It's ${commentDensity}`;
+            return `Your comment density is above the threshold of ${threshold}% 🎉 It's ${commentDensity.toFixed(1)}`;
         }
     }
 }
