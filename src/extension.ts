@@ -88,9 +88,9 @@ class CommentDensityStatusBar {
 
     public getFeedback(commentDensity: number): string {
         if ( commentDensity < this.threshold ) {
-            return `Your comment density is under the threshold of ${this.threshold}% 😭`;
+            return `Your comment density is under the threshold of ${this.threshold}% 😭 It's ${commentDensity}`;
         } else {
-            return `Your comment density is above the threshold of ${this.threshold}% 🎉`;
+            return `Your comment density is above the threshold of ${this.threshold}% 🎉 It's ${commentDensity}`;
         }
     }
 }
