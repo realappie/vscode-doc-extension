@@ -52,5 +52,8 @@
 	"dependencies": {
 		"cloc-lib": "^1.0.2"
     },
-    "publisher": "realappie"
+    "publisher": "realappie",
+    "repository": {
+        "url": "https://github.com/realappie/vscode-doc-extension"
+    }
 }
