@@ -1,11 +1,12 @@
 {
 	"name": "doc-extension",
-	"displayName": "doc-extension",
+	"displayName": "Comment counter",
 	"description": "vscode extension to calculate comment density",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.25.0"
-	},
+    },
+    "icon": "./logo.png",
 	"license": "MIT",
 	"categories": [
 		"Other"
