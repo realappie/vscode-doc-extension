@@ -2,11 +2,11 @@
 	"name": "doc-extension",
 	"displayName": "Comment counter",
 	"description": "vscode extension to calculate comment density",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.25.0"
-    },
-    "icon": "logo.png",
+	},
+	"icon": "logo.png",
 	"license": "MIT",
 	"categories": [
 		"Other"
@@ -52,9 +52,9 @@
 	},
 	"dependencies": {
 		"cloc-lib": "^1.0.2"
-    },
-    "publisher": "realappie",
-    "repository": {
-        "url": "https://github.com/realappie/vscode-doc-extension"
-    }
+	},
+	"publisher": "realappie",
+	"repository": {
+		"url": "https://github.com/realappie/vscode-doc-extension"
+	}
 }
