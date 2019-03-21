@@ -6,7 +6,7 @@
 	"engines": {
 		"vscode": "^1.25.0"
 	},
-	"icon": "logo.png",
+	"icon": "assets/logo.png",
 	"license": "MIT",
 	"categories": [
 		"Other"
