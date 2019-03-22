@@ -2,7 +2,7 @@
 	"name": "doc-extension",
 	"displayName": "Comment counter",
 	"description": "vscode extension to calculate comment density",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"engines": {
 		"vscode": "^1.25.0"
 	},
