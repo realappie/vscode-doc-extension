@@ -70,7 +70,7 @@ class CommentDensityStatusBar {
         try {
             const percentage = await this.calculate(path);
 
-            this.statusBarItem.text = `CLOC ${Math.round(percentage)}%`;
+            this.statusBarItem.text = `Comment density ${Math.round(percentage)}%`;
 
             return percentage;
         } catch (e) {
